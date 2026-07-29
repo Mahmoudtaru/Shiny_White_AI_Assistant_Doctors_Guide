@@ -5,8 +5,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="#071d35" name="theme-color"/>
-<meta content="دليل مبسط جدًا لاستخدام Shiny White Clinical Visualization Assistant، مع Prompts إنجليزية جاهزة للنسخ وأمثلة مناسبة للمبتدئين." name="description"/>
-<title>Shiny White AI Assistant — دليل الأطباء المبسط والـPrompts</title>
+<meta content="دليل بسيط ومريح لاستخدام Shiny White AI Assistant، مع Prompts إنجليزية جاهزة للنسخ وخطوات واضحة للأطباء." name="description"/>
+<title>Shiny White AI Assistant — دليل الأطباء والـPrompts</title><link href="https://mahmoudtaru.github.io/Shiny_White_AI_Assistant_Doctors_Guide/" rel="canonical"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -140,6 +140,56 @@
     .support-card{margin-top:24px;padding:22px;border-radius:18px;background:var(--navy);color:#fff;text-align:right}
     .support-card h3{color:#fff}.support-card p{margin-bottom:14px;color:#e4eff2}
     @media(max-width:720px){.cover-actions,.cta-row{display:grid}.cta{width:100%}.example-pair{grid-template-columns:1fr}.presented{text-align:right}}
+
+
+    /* Readability and device-safety improvements */
+    html,body{max-width:100%;overflow-x:hidden}
+    .page,.prompt-box,.card,.example-mini,.field,.prompt-box header>div{min-width:0}
+    .prompt-text,.builder-output,.contents a,.cta,.bracket-note,.replace-note,code{overflow-wrap:anywhere;word-break:normal}
+    .replace-note{margin:-2px 0 13px;padding:10px 12px;border-radius:11px;background:#fff8e7;border:1px solid #efd99e;color:#6b4b12;font-size:13px;line-height:1.75}
+    @media(max-width:430px){
+      .prompt-box header{flex-direction:column;align-items:stretch}
+      .copy-prompt{width:100%}
+      .wordmark{font-size:14px;letter-spacing:.05em}
+      .tools{gap:6px}.tool{width:40px;height:40px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+
+    /* Final clarity pass */
+    .cover{align-items:center;text-align:center}
+    .cover h1,.cover .cover-lead{margin-right:auto;margin-left:auto}
+    .cover .wordmark,.cover .eyebrow{margin-right:auto;margin-left:auto}
+    .cover .meta{justify-content:center}
+    .cover .presented{text-align:center;margin:24px auto 0}
+    .cover .brand-mini,.cover .page-no{display:none}
+    .compact-grid .card{text-align:center}
+    .compact-grid .num{margin-right:auto;margin-left:auto}
+    .page>h2,.page>.lead{max-width:900px}
+    .closing .quote{max-width:760px;width:100%;margin-right:auto;margin-left:auto}
+    .closing .cta-row{justify-content:center}
+
+    /* Keep sequence arrows tidy: desktop only, never on mobile */
+    @media(max-width:900px){
+      .flow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .flow i{display:none}
+    }
+    @media(max-width:720px){
+      .flow{grid-template-columns:1fr;margin:20px 0}
+      .flow div{width:100%;padding:15px 12px}
+      .cover{min-height:680px;padding:58px 24px 76px}
+      .cover .meta{justify-content:center}
+      .cover .presented{text-align:center}
+      .closing .cta-row{display:grid;width:100%}
+    }
+    @media(max-width:430px){
+      .cover h1{font-size:31px}
+      .cover-lead{font-size:16px}
+      .meta span{padding:7px 10px}
+    }
+
+    .micro-note{margin:8px 0 18px;color:#6b4b12;font-size:13.5px;line-height:1.8}
+    .micro-note:before{content:"ⓘ";display:inline-block;margin-left:7px;color:var(--gold);font-weight:900}
 </style>
 </head>
 <body>
@@ -147,52 +197,24 @@
 <div aria-label="أدوات الدليل" class="tools">
 <button aria-label="طباعة" class="tool" onclick="window.print()" title="طباعة أو حفظ PDF">⤓</button>
 <button aria-label="الفهرس" class="tool" onclick="document.getElementById('contents').scrollIntoView()" title="الفهرس">☷</button>
-<button aria-label="نسخ رابط الدليل" class="tool copy-guide-link" title="نسخ رابط الدليل" type="button">🔗</button></div>
+</div>
 <main class="book">
 <section class="page cover" id="cover">
 <div class="wordmark">SHINY WHITE</div>
-<span class="eyebrow">Beginner-Friendly Doctors Guide • خطوة بخطوة</span>
-<h1>دليل بسيط لاستخدام<br/><span>Shiny White AI Assistant</span></h1>
-<p class="cover-lead">مش محتاج تكون جرّبت AI قبل كده. ارفع الحالة، اختار الـPrompt المناسب، بدّل التفاصيل الموجودة بين [ ] بتفاصيل مريضك، وابعت الأمر للمساعد.</p>
-<div class="meta"><span>Prompts جاهزة للنسخ</span><span>شرح للمبتدئين</span><span>Mobile &amp; Laptop</span></div><p class="presented">Presented by Mahmoud Harb</p><div class="cover-actions">
-<a class="cta primary-link" href="https://chatgpt.com/g/g-6a68a46d8e3c8191af478fff759eaf08-shiny-white-visualizer" rel="noopener" target="_blank">افتح Shiny White Assistant ↗</a>
-<button class="cta secondary-link copy-guide-link" type="button">احتفظ برابط الدليل</button>
-</div>
+<span class="eyebrow">دليل مبسط للأطباء • خطوة بخطوة</span>
+<h1>دليل استخدام<br/><span>Shiny White AI Assistant</span></h1>
+<p class="cover-lead">ارفع الحالة، اختار الـPrompt المناسب، بدّل التفاصيل بين [ ]، واضغط نسخ. مش محتاج أي خبرة سابقة في الـAI.</p>
+<div class="meta"><span>Prompts جاهزة للنسخ</span><span>شرح عملي مبسط</span></div><p class="presented">Presented by Mahmoud Harb</p>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">01</span>
 </section>
 <section class="page" id="idea">
-<span class="bigword">01</span><span class="eyebrow">ابدأ من هنا</span>
-<h2>المساعد ده إيه… وأستخدمه إزاي؟</h2>
-<div class="story">
-<p>ده <bdi dir="ltr">Custom GPT</bdi>، يعني نسخة من ChatGPT مخصصة لوظيفة واحدة داخل Shiny White: تساعدك في صور الحالات، الـTreatment Visualization، شرح الباقات، وخطوات العلاج.</p>
-<p>إحنا كتبناله تعليمات شغلنا ورفعنا له قاعدة المعرفة الخاصة بـShiny White، لذلك هو عارف اسم المركز والباقات وبياناتنا. لكن <mark>هو مش عارف تفاصيل المريض اللي قدامك إلا لما ترفعها وتكتبها له</mark>.</p>
-<p>تعامل معاه كزميل سريع: ارفع الصور، ثم قل له بوضوح هل تريد <bdi dir="ltr">After only</bdi>، مقارنة <bdi dir="ltr">Before / After</bdi>، خطوات علاج، ولا Poster.</p>
-</div>
-<div class="example-pair">
-<div class="example-mini"><b>مثال بسيط بره الأسنان</b><p>لو قلت لحد «هات قهوة» ممكن يجيب أي حاجة. لكن «قهوة سادة صغيرة» طلب واضح. مع الـAI كل تفصيلة مهمة بنفس الطريقة.</p></div>
-<div class="example-mini"><b>مثال من الأسنان</b><p>بدل «اعمل الحالة بعد»، اكتب: <span dir="ltr">Create an After-only simulation with natural veneers and preserve the exact same patient.</span></p></div>
-</div>
-<div class="bracket-note"><b>معنى الأقواس [ ]:</b> أي كلمة موجودة بين أقواس مربعة هي مكان فاضي أنت تستبدله بتفاصيل الحالة. مثال: بدّل <code>[CORRECTION]</code> بـ <code>replace the missing upper lateral incisor with a natural implant-supported crown</code>. لا ترسل الكلام الموجود بين الأقواس كما هو.</div>
-<div class="cta-row">
-<a class="cta primary-link" href="https://chatgpt.com/g/g-6a68a46d8e3c8191af478fff759eaf08-shiny-white-visualizer" rel="noopener" target="_blank">ابدأ استخدام المساعد ↗</a>
-<button class="cta secondary-link copy-guide-link" type="button">انسخ رابط الدليل واحتفظ به</button>
-</div>
-<span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">02</span></section>
+<span class="bigword">01</span><span class="eyebrow">الفكرة ببساطة</span>
+<h2>ده ChatGPT… لكن متخصّص في شغلنا</h2>
+<div class="story"><p>المساعد نسخة مخصصة من ChatGPT اتبنّت داخل Shiny White لقسم التشخيص والتواصل البصري مع المريض.</p><p>إحنا اديناله تعليمات الشغل وقاعدة معرفة Shiny White، فبيقدر يساعدك في صور After، المقارنات، خطوات العلاج، الباقات والـPosters.</p><p>هو يعرف شغلنا، لكن ما يعرفش حالة المريض اللي قدامك إلا لما ترفع الصور وتكتب المطلوب بوضوح.</p></div><div class="grid three compact-grid"><article class="card"><div class="num">1</div><h3>ارفع</h3><p>صور الحالة والأشعة أو الـClinical Notes المرتبطة بها.</p></article><article class="card"><div class="num">2</div><h3>اطلب</h3><p>After، Before/After، خطوات علاج، أو Poster.</p></article><article class="card"><div class="num">3</div><h3>راجع</h3><p>لو في خطأ، حدده في جزء واحد بدل إعادة كل شيء.</p></article></div><span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">02</span></section><section class="page" id="brackets"><span class="bigword">02</span><span class="eyebrow">قبل أول Prompt</span><h2>اللي بين [ ]… أنت اللي بتغيّره</h2><p class="lead">أي كلمة بين الأقواس المربعة هي مكان فاضي لتفاصيل الحالة. امسح الأقواس واكتب المعلومة الحقيقية قبل الإرسال.</p><div class="example-pair"><div class="example-mini"><b>مثال بسيط بعيد عن الأسنان</b><p>بدل «هات قهوة»، الطلب الأوضح هو: «قهوة سادة صغيرة». كل تفصيلة بتقرّب النتيجة من اللي في دماغك.</p></div><div class="example-mini"><b>مثال من حالة أسنان</b><p>بدّل <code>[CORRECTION]</code> بـ <code>replace the missing upper lateral incisor with a natural implant-supported crown</code></p></div></div><div class="bracket-note"><b>المهم: </b>الملاحظة الصفراء خارج الـPrompt، وزر النسخ ينسخ الأمر الإنجليزي فقط. لو مش عارف المصطلح، اكتب وصف الحالة بالعربي وخليه يصيغ الـPrompt لك.</div><span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">00</span></section>
 <section class="page" id="contents">
 <span class="eyebrow">خريطة الدليل</span>
-<h2>كل حاجة قدامك خطوة بخطوة</h2>
-<nav class="contents">
-<a href="#capabilities"><b>2</b>المساعد يقدر يعمل إيه؟</a>
-<a href="#workflow"><b>3</b>أفضل Workflow</a>
-<a href="#quick-prompts"><b>4</b>أسرع Prompts يومية</a>
-<a href="#packages"><b>5</b>Mixed Dentition والباقات</a>
-<a href="#clinical-steps"><b>6</b>خطوات العلاج والـFramework</a>
-<a href="#poster-prompts"><b>7</b>Poster وTreatment Journey</a>
-<a href="#revision"><b>8</b>لو النتيجة مش مظبوطة</a>
-<a href="#prompt-formula"><b>9</b>ازاي تكتب Prompt بنفسك؟</a>
-<a href="#builder"><b>10</b>Prompt Builder</a>
-<a href="#notes"><b>11</b>ملحوظات مهمة</a>
-</nav>
+<h2>اختار الموضوع اللي محتاجه</h2>
+<nav class="contents"><a href="#idea"><b>1</b>الفكرة ببساطة</a><a href="#brackets"><b>2</b>طريقة استخدام [ ]</a><a href="#capabilities"><b>3</b>المساعد يقدر يعمل إيه؟</a><a href="#workflow"><b>4</b>أفضل Workflow</a><a href="#quick-prompts"><b>5</b>After وBefore/After</a><a href="#guided-prompts"><b>6</b>لو مش عارف تبدأ</a><a href="#packages"><b>7</b>Mixed Dentition وPrime Bite</a><a href="#smile-packages"><b>8</b>Hello Shine وFull-Mouth</a><a href="#clinical-steps"><b>9</b>Preparation وVeneers</a><a href="#framework-steps"><b>10</b>Implant وFramework</a><a href="#poster-prompts"><b>11</b>Poster للرحلة أو الباقة</a><a href="#reference-poster"><b>12</b>Poster من References</a><a href="#revision"><b>13</b>تصحيح النتيجة</a><a href="#prompt-formula"><b>14</b>اكتب Prompt بنفسك</a><a href="#builder"><b>15</b>Prompt Builder</a><a href="#notes"><b>16</b>ملاحظات مهمة</a></nav>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">03</span>
 </section>
 <section class="page" id="capabilities">
@@ -224,90 +246,83 @@
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">05</span>
 </section>
 <section class="page" id="quick-prompts">
-<span class="bigword">04</span><span class="eyebrow">Quick Start</span>
-<h2>أسرع Prompts للاستخدام اليومي</h2>
-<p class="lead">ارفع الصور أولًا، ثم انسخ الـPrompt المناسب. قبل الإرسال، بدّل كل ما هو مكتوب بين [ ] بتفاصيل الحالة الموجودة معك.</p><div class="bracket-note"><b>مهم جدًا قبل النسخ:</b> أي جزء بالشكل <code>[LIKE THIS]</code> هو مثال أو خانة ناقصة. أنت الذي تملؤها بمعلومة المريض أو الخطة. لو مش عارف تكتبها بالإنجليزي، اكتبها بالعربي للمساعد واطلب منه يصيغها لك.</div>
-<div class="prompt-box">
+<span class="bigword">05</span><span class="eyebrow">Quick Start</span>
+<h2>صورتك المطلوبة في Prompt واحد</h2>
+<p class="lead">ارفع صور الحالة، ثم اختار: After فقط أو مقارنة Before / After.</p>
+<p class="micro-note">قبل النسخ: بدّل أي جزء بين [ ] بتفاصيل الحالة الفعلية.</p><div class="prompt-box">
 <header><div><strong>After Image فقط</strong><small>لما تكون عايز النتيجة من غير بوستر أو كلام.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Using the uploaded patient images, create a photorealistic After-only dental treatment simulation. Preserve the exact same patient identity, face, lips, expression, head angle, lighting, and background. Modify only the dental structures required for: [TREATMENT OR CORRECTION]. Keep the result natural, conservative, and medically plausible. Do not add text, logo, hotline, branches, or poster elements.</p>
+<p class="prompt-text" dir="ltr" lang="en">Using the uploaded patient images, create a photorealistic After-only dental treatment simulation. Preserve the exact same patient identity, face, lips, expression, head angle, lighting, and background. Modify only the dental structures required for: [TREATMENT OR CORRECTION]. Keep the result natural, conservative, and medically plausible. Do not add text, logo, hotline, branches, or poster elements.</p>
 </div>
 <div class="prompt-box">
 <header><div><strong>Before / After فقط</strong><small>مقارنة نظيفة، من غير عناصر تسويقية.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Create a clean Before/After comparison using the uploaded original patient image as Before. In After, preserve the exact same patient identity, angle, crop, pose, expression, lighting, and background. Apply only this dental correction: [CORRECTION]. Do not beautify the face or modify non-dental features. Do not turn the result into a poster.</p>
-</div>
-<div class="prompt-box">
-<header><div><strong>مراجعة الحالة ثم اقتراح المخرج</strong><small>لما تكون عارف المشكلة، لكن مش عارف تطلب إيه بالضبط.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Review the uploaded patient images and radiographs for visual communication only. Summarize the clearly visible dental concerns without giving a definitive diagnosis. Then suggest the most useful output for this case: After-only simulation, Before/After comparison, treatment-steps visual, or patient poster. Ask me no more than one essential question.</p>
-</div>
-<div class="prompt-box">
-<header><div><strong>خليه يكتبلك Prompt الحالة</strong><small>أنت اشرح الحالة بالعربي وهو يصيغ الأمر بالإنجليزي وينفذه.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Help me write the best prompt for this dental case. I will provide the patient images, current condition, intended treatment, desired output, and any reference image. Ask no more than one essential question, then write a concise English prompt and execute it.</p>
+<p class="prompt-text" dir="ltr" lang="en">Create a clean Before/After comparison using the uploaded original patient image as Before. In After, preserve the exact same patient identity, angle, crop, pose, expression, lighting, and background. Apply only this dental correction: [CORRECTION]. Do not beautify the face or modify non-dental features. Do not turn the result into a poster.</p>
 </div>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">06</span>
-</section>
+</section><section class="page" id="guided-prompts"><span class="bigword">06</span><span class="eyebrow">مش عارف تبدأ؟</span><h2>خلي المساعد يساعدك تختار وتكتب</h2><p class="lead">الصفحة دي مفيدة لو الحالة واضحة عندك، لكن مش عارف أنسب مخرج أو صياغة الأمر.</p><div class="prompt-box">
+<header><div><strong>مراجعة الحالة ثم اقتراح المخرج</strong><small>لما تكون عارف المشكلة، لكن مش عارف تطلب إيه بالضبط.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
+<p class="prompt-text" dir="ltr" lang="en">Review the uploaded patient images and radiographs for visual communication only. Summarize the clearly visible dental concerns without giving a definitive diagnosis. Then suggest the most useful output for this case: After-only simulation, Before/After comparison, treatment-steps visual, or patient poster. Ask me no more than one essential question.</p>
+</div><div class="prompt-box">
+<header><div><strong>خليه يكتبلك Prompt الحالة</strong><small>أنت اشرح الحالة بالعربي وهو يصيغ الأمر بالإنجليزي وينفذه.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
+<p class="prompt-text" dir="ltr" lang="en">Help me write the best prompt for this dental case. I will provide the patient images, current condition, intended treatment, desired output, and any reference image. Ask no more than one essential question, then write a concise English prompt and execute it.</p>
+</div><span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">00</span></section>
 <section class="page" id="packages">
-<span class="bigword">05</span><span class="eyebrow">Cases &amp; Packages</span>
-<h2>Prompts للحالات اللي بتتكرر</h2>
-<div class="prompt-box">
+<span class="bigword">07</span><span class="eyebrow">Cases &amp; Packages</span>
+<h2>Mixed Dentition وPrime Bite</h2>
+<p class="micro-note">قبل النسخ: بدّل أي جزء بين [ ] بتفاصيل الحالة الفعلية.</p><div class="prompt-box">
 <header><div><strong>Mixed Dentition</strong><small>استخدمه مع صور واضحة واذكر الخطة لو محددة.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Review the uploaded mixed-dentition case for visual communication only. Identify the clearly visible primary and permanent teeth, spacing or crowding, erupting or apparently missing teeth, and visible occlusal concerns without giving a definitive diagnosis. Then create a conservative visual simulation based on this confirmed plan: [PLAN]. Preserve the child’s exact identity, age, facial features, and expression.</p>
+<p class="prompt-text" dir="ltr" lang="en">Review the uploaded mixed-dentition case for visual communication only. Identify the clearly visible primary and permanent teeth, spacing or crowding, erupting or apparently missing teeth, and visible occlusal concerns without giving a definitive diagnosis. Then create a conservative visual simulation based on this confirmed plan: [PLAN]. Preserve the child’s exact identity, age, facial features, and expression.</p>
 </div>
 <div class="prompt-box">
 <header><div><strong>Prime Bite</strong><small>حدد After فقط أو Before/After في آخر الجملة.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Using the uploaded patient photos, radiographs, and the approved Prime Bite information in the Shiny White Knowledge Base, create a realistic [AFTER-ONLY / BEFORE-AND-AFTER] visualization. Preserve the exact same patient identity and facial features. Restore only the missing posterior support and bite-related dental structures supported by the confirmed treatment plan. Do not invent implant number, position, material, or loading protocol.</p>
-</div>
-<div class="prompt-box">
-<header><div><strong>Hello Shine</strong><small>مفيد للـSmile Rehabilitation مع الحفاظ على الشكل الطبيعي.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Create a natural Hello Shine After simulation for the uploaded patient using only the approved package details and confirmed treatment plan. Preserve the exact same patient identity, lips, expression, and facial proportions. Improve only the dental structures included in the plan. Use natural tooth proportions, translucency, shade variation, and a realistic smile arc. Do not exaggerate whitening or facial changes.</p>
-</div>
-<div class="prompt-box">
-<header><div><strong>Forever Young / Full-Mouth Rehabilitation</strong><small>للحالات الكبيرة من غير تحويل المريض لشخص أصغر أو مختلف.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Create a photorealistic full-mouth rehabilitation After simulation for the uploaded patient using the confirmed plan and the approved Forever Young information in the Knowledge Base. Preserve the exact same patient identity, age, skin, lips, and expression. Restore natural dental support, vertical dimension, and a believable fixed smile only as supported by the plan. Do not de-age the face or exaggerate symmetry, tooth size, or whiteness.</p>
+<p class="prompt-text" dir="ltr" lang="en">Using the uploaded patient photos, radiographs, and the approved Prime Bite information in the Shiny White Knowledge Base, create a realistic [AFTER-ONLY / BEFORE-AND-AFTER] visualization. Preserve the exact same patient identity and facial features. Restore only the missing posterior support and bite-related dental structures supported by the confirmed treatment plan. Do not invent implant number, position, material, or loading protocol.</p>
 </div>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">07</span>
-</section>
+</section><section class="page" id="smile-packages"><span class="bigword">08</span><span class="eyebrow">Cases &amp; Packages</span><h2>Hello Shine وFull-Mouth Rehabilitation</h2><p class="lead">استخدم اسم الباقة فقط لما يكون الاختيار أو الخطة متأكدين، وسيب المساعد يرجع لتفاصيلها من الـKnowledge Base.</p><div class="prompt-box">
+<header><div><strong>Hello Shine</strong><small>مفيد للـSmile Rehabilitation مع الحفاظ على الشكل الطبيعي.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
+<p class="prompt-text" dir="ltr" lang="en">Create a natural Hello Shine After simulation for the uploaded patient using only the approved package details and confirmed treatment plan. Preserve the exact same patient identity, lips, expression, and facial proportions. Improve only the dental structures included in the plan. Use natural tooth proportions, translucency, shade variation, and a realistic smile arc. Do not exaggerate whitening or facial changes.</p>
+</div><div class="prompt-box">
+<header><div><strong>Forever Young / Full-Mouth Rehabilitation</strong><small>للحالات الكبيرة من غير تحويل المريض لشخص أصغر أو مختلف.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
+<p class="prompt-text" dir="ltr" lang="en">Create a photorealistic full-mouth rehabilitation After simulation for the uploaded patient using the confirmed plan and the approved Forever Young information in the Knowledge Base. Preserve the exact same patient identity, age, skin, lips, and expression. Restore natural dental support, vertical dimension, and a believable fixed smile only as supported by the plan. Do not de-age the face or exaggerate symmetry, tooth size, or whiteness.</p>
+</div><span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">00</span></section>
 <section class="page" id="clinical-steps">
-<span class="bigword">06</span><span class="eyebrow">Clinical Steps</span>
-<h2>لما تكون عايز Preparation أو Framework أو مراحل كاملة</h2>
-<p class="lead">في الطلبات المتخصصة، ارفع صورة مرجعية من حالاتنا توضح شكل الـPreparation أو الـFramework المطلوب. ده يقلل الاجتهاد ويخلي المقصود واضح.</p>
-<div class="prompt-box">
+<span class="bigword">09</span><span class="eyebrow">Clinical Steps</span>
+<h2>Preparation وVeneer Workflow</h2>
+<p class="lead">لو عايز شكل Preparation معين، ارفع Reference واضح من حالاتنا. المرجع للشكل السريري فقط، مش لنسخ مريض آخر.</p>
+<p class="micro-note">قبل النسخ: بدّل أي جزء بين [ ] بتفاصيل الحالة الفعلية.</p><div class="prompt-box">
 <header><div><strong>Crown Preparation Sequence</strong><small>ارفع Reference للـPreparation لو عايز شكل معين.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Using the uploaded patient case, confirmed treatment plan, and uploaded clinical reference images, create a four-stage clinical visual sequence for [TOOTH OR REGION]: current condition → crown preparation → provisional restoration → final crown. Use the reference only for preparation geometry and restoration style. Preserve the same patient and anatomy. Do not copy another patient or invent unsupported clinical steps.</p>
+<p class="prompt-text" dir="ltr" lang="en">Using the uploaded patient case, confirmed treatment plan, and uploaded clinical reference images, create a four-stage clinical visual sequence for [TOOTH OR REGION]: current condition → crown preparation → provisional restoration → final crown. Use the reference only for preparation geometry and restoration style. Preserve the same patient and anatomy. Do not copy another patient or invent unsupported clinical steps.</p>
 </div>
 <div class="prompt-box">
 <header><div><strong>Veneer Workflow</strong><small>مناسب لعرض المراحل للمريض أو للفريق.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Create a medically plausible veneer treatment sequence using the uploaded patient images and clinical references: initial smile → digital mock-up → conservative preparation → provisional stage → final veneers. Preserve the exact same patient identity and natural tooth proportions. Use the uploaded reference only for the preparation and veneer style. Show frontal and close smile views with short English stage labels.</p>
-</div>
-<div class="prompt-box">
-<header><div><strong>Implant + Framework + Final Crowns</strong><small>غيّر Titanium إلى BioHPP لو ده المكتوب في الخطة.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Using the uploaded patient case, confirmed treatment plan, and uploaded Shiny White clinical references, create a staged full-arch treatment journey: current condition → post-extraction or healing stage → implant-supported provisional stage → [TITANIUM / BIOHPP] framework try-in → final crowns. Include frontal dental views and final facial profile. Preserve the exact patient identity. Do not invent implant positions, surgical anatomy, materials, or steps not confirmed in the plan.</p>
-</div>
-<div class="prompt-box">
-<header><div><strong>Extraction → Implant → Final Restoration</strong><small>لحالة سن أو منطقة محددة.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Create a clear step-by-step clinical visualization for the uploaded case: current tooth condition → extraction stage → implant restoration stage → final crown. Use only the confirmed treatment plan and uploaded references. Keep the anatomy and patient identity consistent. Do not show or invent hidden surgical details unless they are explicitly provided in the reference.</p>
+<p class="prompt-text" dir="ltr" lang="en">Create a medically plausible veneer treatment sequence using the uploaded patient images and clinical references: initial smile → digital mock-up → conservative preparation → provisional stage → final veneers. Preserve the exact same patient identity and natural tooth proportions. Use the uploaded reference only for the preparation and veneer style. Show frontal and close smile views with short English stage labels.</p>
 </div>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">08</span>
-</section>
+</section><section class="page" id="framework-steps"><span class="bigword">10</span><span class="eyebrow">Clinical Steps</span><h2>Implant، Framework وFinal Restoration</h2><p class="lead">ارفع الخطة المؤكدة وأي Reference للـTitanium أو BioHPP أو الـFinal Crowns قبل استخدام الـPrompt.</p><p class="micro-note">قبل النسخ: بدّل أي جزء بين [ ] بتفاصيل الحالة الفعلية.</p><div class="prompt-box">
+<header><div><strong>Implant + Framework + Final Crowns</strong><small>غيّر Titanium إلى BioHPP لو ده المكتوب في الخطة.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
+<p class="prompt-text" dir="ltr" lang="en">Using the uploaded patient case, confirmed treatment plan, and uploaded Shiny White clinical references, create a staged full-arch treatment journey: current condition → post-extraction or healing stage → implant-supported provisional stage → [TITANIUM / BIOHPP] framework try-in → final crowns. Include frontal dental views and final facial profile. Preserve the exact patient identity. Do not invent implant positions, surgical anatomy, materials, or steps not confirmed in the plan.</p>
+</div><div class="prompt-box">
+<header><div><strong>Extraction → Implant → Final Restoration</strong><small>لحالة سن أو منطقة محددة.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
+<p class="prompt-text" dir="ltr" lang="en">Create a clear step-by-step clinical visualization for the uploaded case: current tooth condition → extraction stage → implant restoration stage → final crown. Use only the confirmed treatment plan and uploaded references. Keep the anatomy and patient identity consistent. Do not show or invent hidden surgical details unless they are explicitly provided in the reference.</p>
+</div><span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">00</span></section>
 <section class="page" id="poster-prompts">
-<span class="bigword">07</span><span class="eyebrow">Poster / Presentation</span>
-<h2>لما تكون عايز خطوات، جلسات، فروع أو باقة</h2>
+<span class="bigword">11</span><span class="eyebrow">Poster / Presentation</span>
+<h2>Poster للرحلة أو الباقة</h2>
 <div class="story">
 <p>البوستر خطوة منفصلة. اطلبه لما تحتاج شرحًا بصريًا جاهزًا للمريض، وليس لمجرد أنك عايز After أو Before/After.</p>
 </div>
-<div class="prompt-box">
+<p class="micro-note">قبل النسخ: بدّل أي جزء بين [ ] بتفاصيل الحالة الفعلية.</p><div class="prompt-box">
 <header><div><strong>Treatment Journey Poster</strong><small>اكتب اسم الباقة والمعلومات التي تريد ظهورها.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Create a premium Shiny White treatment-journey poster for the uploaded patient case. Use only verified information from the Shiny White Knowledge Base and the confirmed plan. Include: [PACKAGE NAME], [TREATMENT STEPS], [NUMBER OR TIMING OF SESSIONS IF VERIFIED], [RELEVANT BRANCHES], and hotline 19416. Keep Arabic text concise, accurate, and RTL. Use plain text “SHINY WHITE” unless the official logo file is uploaded in this current chat.</p>
+<p class="prompt-text" dir="ltr" lang="en">Create a premium Shiny White treatment-journey poster for the uploaded patient case. Use only verified information from the Shiny White Knowledge Base and the confirmed plan. Include: [PACKAGE NAME], [TREATMENT STEPS], [NUMBER OR TIMING OF SESSIONS IF VERIFIED], [RELEVANT BRANCHES], and hotline 19416. Keep Arabic text concise, accurate, and RTL. Use plain text “SHINY WHITE” unless the official logo file is uploaded in this current chat.</p>
 </div>
 <div class="prompt-box">
 <header><div><strong>Package Explanation Poster</strong><small>مفيد للواتساب أو أثناء الاستشارة.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Create a clean patient-facing poster explaining the [PACKAGE NAME] package. Retrieve all details from the Shiny White Knowledge Base. Include the suitable condition, treatment goal, verified components, main steps, expected functional and aesthetic benefits, and verified timeline only if available. Add hotline 19416. Do not invent prices, materials, offers, or guarantees.</p>
-</div>
-<div class="prompt-box">
-<header><div><strong>Clinical Steps Poster from References</strong><small>ارفع صور الـPreparation أو Framework أو Crowns أولًا.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Turn the uploaded patient case and clinical reference images into a premium step-by-step Shiny White presentation. Show these stages: [LIST THE STAGES]. Use the references only to understand the clinical appearance of each stage. Keep the same patient and do not copy another patient’s anatomy. Add short English clinical labels and a concise Arabic explanation for each stage.</p>
+<p class="prompt-text" dir="ltr" lang="en">Create a clean patient-facing poster explaining the [PACKAGE NAME] package. Retrieve all details from the Shiny White Knowledge Base. Include the suitable condition, treatment goal, verified components, main steps, expected functional and aesthetic benefits, and verified timeline only if available. Add hotline 19416. Do not invent prices, materials, offers, or guarantees.</p>
 </div>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">09</span>
-</section>
+</section><section class="page" id="reference-poster"><span class="bigword">12</span><span class="eyebrow">Poster from References</span><h2>حوّل الصور المرجعية لخطوات واضحة</h2><p class="lead">ارفع صور المراحل التي تريد شرحها، ثم اكتب ترتيبها. المساعد يستخدم المرجع لفهم شكل المرحلة فقط.</p><p class="micro-note">قبل النسخ: بدّل أي جزء بين [ ] بتفاصيل الحالة الفعلية.</p><div class="prompt-box">
+<header><div><strong>Clinical Steps Poster from References</strong><small>ارفع صور الـPreparation أو Framework أو Crowns أولًا.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
+<p class="prompt-text" dir="ltr" lang="en">Turn the uploaded patient case and clinical reference images into a premium step-by-step Shiny White presentation. Show these stages: [LIST THE STAGES]. Use the references only to understand the clinical appearance of each stage. Keep the same patient and do not copy another patient’s anatomy. Add short English clinical labels and a concise Arabic explanation for each stage.</p>
+</div><div class="soft warning" style="margin-top:22px"><b>مثال سريع: </b>ارفع صورة Preparation وصورة Framework وصورة Final Crowns، ثم اكتب ترتيب المراحل داخل [LIST THE STAGES].</div><span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">00</span></section>
 <section class="page" id="revision">
 <span class="bigword">08</span><span class="eyebrow">Revision Mode</span>
 <h2>النتيجة مش زي ما أنت عايز؟ متبدأش من الصفر</h2>
@@ -315,13 +330,13 @@
 <p>قل له الخطأ فين بالضبط. هل المريض بقى شخص تاني؟ الأسنان عريضة؟ اللون أبيض زيادة؟ الـPreparation مش بالشكل المطلوب؟ ترتيب المراحل غلط؟</p>
 <p>لو التفاصيل صعب وصفها، ارفع <bdi dir="ltr">Reference Image</bdi>. المرجع يشرح الشكل أو الأسلوب، لكن المساعد لازم يفضل محافظ على نفس المريض.</p>
 </div>
-<div class="prompt-box">
+<p class="micro-note">قبل النسخ: بدّل أي جزء بين [ ] بتفاصيل الحالة الفعلية.</p><div class="prompt-box">
 <header><div><strong>تصحيح النتيجة</strong><small>غيّر الجزء بين الأقواس إلى المشكلة الأساسية.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. The previous result does not match my request. Compare it with the original patient image and identify what changed incorrectly. The main problem is: [PATIENT IDENTITY / TOOTH SHAPE / SHADE / SIZE / GINGIVA / BITE / PREPARATION / FRAMEWORK / LAYOUT]. Correct only this issue and preserve everything else exactly as it is. Restore the original patient identity before making any cosmetic improvement.</p>
+<p class="prompt-text" dir="ltr" lang="en">The previous result does not match my request. Compare it with the original patient image and identify what changed incorrectly. The main problem is: [PATIENT IDENTITY / TOOTH SHAPE / SHADE / SIZE / GINGIVA / BITE / PREPARATION / FRAMEWORK / LAYOUT]. Correct only this issue and preserve everything else exactly as it is. Restore the original patient identity before making any cosmetic improvement.</p>
 </div>
 <div class="prompt-box">
 <header><div><strong>التعديل باستخدام Reference</strong><small>استخدم المرجع للشكل، مش لنسخ المريض.</small></div><button class="copy-prompt" type="button">نسخ</button></header>
-<p class="prompt-text">Before using this prompt, replace every item inside square brackets with the actual details of this patient case. Use the newly uploaded reference image only to understand the desired [TOOTH SHAPE / PREPARATION / FRAMEWORK / POSTER STYLE / LIGHTING]. Apply that style to the current patient while preserving the current patient’s exact face, identity, anatomy, angle, and expression. Do not copy the reference patient or replace the original case.</p>
+<p class="prompt-text" dir="ltr" lang="en">Use the newly uploaded reference image only to understand the desired [TOOTH SHAPE / PREPARATION / FRAMEWORK / POSTER STYLE / LIGHTING]. Apply that style to the current patient while preserving the current patient’s exact face, identity, anatomy, angle, and expression. Do not copy the reference patient or replace the original case.</p>
 </div>
 <div class="soft danger" style="margin-top:22px"><b>مهم:</b> متقولش فقط “مش حلوة”. اكتب سبب واحد واضح. كل تعديل محدد يقلل احتمالية إنه يبوّظ حاجات كانت صح.</div>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">10</span>
@@ -396,43 +411,31 @@
 <button class="copy-builder" id="copyBuilder" type="button">نسخ الناتج</button>
 <button class="secondary" id="clearBuilder" type="button">مسح</button>
 </div>
-<div class="builder-output" id="builderOutput">Your generated English prompt will appear here.</div>
+<div aria-live="polite" class="builder-output" id="builderOutput" role="status">Your generated English prompt will appear here.</div>
 </div>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">12</span>
 </section>
 <section class="page" id="notes">
-<span class="bigword">11</span><span class="eyebrow">Important Notes</span>
-<h2>حاجات صغيرة… بتفرق جدًا</h2>
-<div class="checklist">
-<div class="check">صورة واضحة واحدة أفضل من خمس صور ضعيفة أو متعارضة.</div>
-<div class="check">قول له After فقط لو لا تريد بوستر، أو Before/After فقط لو تريد مقارنة نظيفة.</div>
-<div class="check">لـPreparation أو Framework متخصص، ارفع Reference من حالاتنا.</div>
-<div class="check">لا تطلب منه اختراع Implant position أو Material غير موجود في الخطة.</div>
-<div class="check">لو عايز اللوجو الرسمي داخل التصميم، ارفعه في نفس الشات. غير كده يكتب SHINY WHITE نصيًا.</div>
-<div class="check">كل شات جديد: ارفع صور الحالة والـReferences المرتبطة بها مرة أخرى.</div>
-<div class="check">لو حصل Image generation failed، أعد إرسال الطلب بشكل مركز أو قلّل عدد المهام في نفس الرسالة.</div>
-<div class="check">راجع الكتابة العربية والأرقام قبل إرسال أي Poster للمريض.</div>
-<div class="check">احتفظ برابط الدليل في المفضلة؛ ارجع له وقت ما تحتاج تنسخ Prompt أو تراجع طريقة الاستخدام.</div><div class="check">ادخل للمساعد من الرابط الموجود في الدليل بدل ما تبحث عنه كل مرة.</div><div class="check">أي كلام بين [ ] لازم تستبدله بتفاصيل الحالة قبل إرسال الـPrompt.</div></div>
-<div class="soft" style="margin-top:24px"><b>أفضل جملة تبدأ بها أي حالة مختلفة:</b><br/><span dir="ltr" style="display:block;text-align:left;margin-top:8px">I will upload a dental case. Help me choose the most useful visualization, ask no more than one essential question, then create the result while preserving the exact same patient identity.</span></div><div class="cta-row">
-<a class="cta primary-link" href="https://chatgpt.com/g/g-6a68a46d8e3c8191af478fff759eaf08-shiny-white-visualizer" rel="noopener" target="_blank">افتح المساعد ↗</a>
-<button class="cta secondary-link copy-guide-link" type="button">انسخ رابط الدليل</button>
-</div><div class="support-card"><h3>عطلت خالص؟</h3><p>لو مش عارف تكتب الطلب، الصورة بتطلع غلط باستمرار، أو محتاج توضيح لحاجة في الدليل، تواصل مع محمود حرب على WhatsApp.</p><a class="cta primary-link" href="https://wa.me/201157487804?text=%D9%85%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9%20%D9%81%D9%8A%20Shiny%20White%20AI%20Assistant" rel="noopener" target="_blank">WhatsApp: 01157487804 ↗</a></div>
+<span class="bigword">16</span><span class="eyebrow">Important Notes</span>
+<h2>8 ملاحظات قبل ما تبدأ</h2>
+<div class="checklist"><div class="check">صورة واضحة واحدة أفضل من خمس صور ضعيفة أو متعارضة.</div><div class="check">قول له After فقط لو لا تريد بوستر، أو Before/After فقط لو تريد مقارنة نظيفة.</div><div class="check">لـPreparation أو Framework متخصص، ارفع Reference من حالاتنا.</div><div class="check">لا تطلب منه اختراع Implant position أو Material غير موجود في الخطة.</div><div class="check">لو عايز اللوجو الرسمي داخل التصميم، ارفعه في نفس الشات. غير كده يكتب SHINY WHITE نصيًا.</div><div class="check">كل شات جديد: ارفع صور الحالة والـReferences المرتبطة بها مرة أخرى.</div><div class="check">لو حصل Image generation failed، أعد إرسال طلب واحد مركز بدل جمع مهام كثيرة.</div><div class="check">راجع الكتابة العربية والأرقام قبل إرسال أي Poster للمريض.</div></div>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">13</span>
 </section>
 <section class="page closing" id="end">
 <span class="eyebrow">الخلاصة</span>
-<h2>ارفع الحالة. اختار المطلوب.<br/><mark>بدّل [ ] بتفاصيل مريضك.</mark></h2>
-<p class="lead">ابدأ بأبسط Prompt مناسب. لو احتجت خطوة متخصصة مثل Preparation أو Titanium Framework، ارفع Reference واضح. ولو النتيجة مش مناسبة، حدّد الخطأ بدل ما تعيد الطلب من الصفر.</p>
-<div class="quote" style="text-align:right"><em>افتكر دائمًا</em>نفس المريض أولًا، Clinical realism ثانيًا، وبعدها الشكل والتسويق.</div>
+<h2>جاهز تبدأ؟</h2>
+<p class="lead">احتفظ برابط الدليل للرجوع إلى الـPrompts، وافتح المساعد من الزر الموجود هنا. لو عطلت خالص، تواصل على WhatsApp.</p>
+<div class="quote" style="text-align:center"><em>افتكر دائمًا</em>نفس المريض أولًا، Clinical realism ثانيًا، وبعدها الشكل والتسويق.</div>
 <div class="cta-row" style="justify-content:center">
-<a class="cta primary-link" href="https://chatgpt.com/g/g-6a68a46d8e3c8191af478fff759eaf08-shiny-white-visualizer" rel="noopener" target="_blank">Open Shiny White Assistant ↗</a>
-<button class="cta secondary-link copy-guide-link" type="button">Save This Booklet Link</button>
-<a class="cta secondary-link" href="https://wa.me/201157487804?text=%D9%85%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9%20%D9%81%D9%8A%20Shiny%20White%20AI%20Assistant" rel="noopener" target="_blank">WhatsApp Support ↗</a>
+<a class="cta primary-link" href="https://chatgpt.com/g/g-6a68a46d8e3c8191af478fff759eaf08-shiny-white-visualizer" rel="noopener" target="_blank">افتح Shiny White Assistant</a>
+<button class="cta secondary-link copy-guide-link" type="button">احتفظ برابط الدليل</button>
+<a class="cta secondary-link" href="https://wa.me/201157487804?text=%D9%85%D8%AD%D8%AA%D8%A7%D8%AC%20%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9%20%D9%81%D9%8A%20Shiny%20White%20AI%20Assistant" rel="noopener" target="_blank">WhatsApp Support: 01157487804</a>
 </div><p class="signature" dir="ltr" style="text-align:center">Presented by Mahmoud Harb</p>
 <span class="brand-mini">Shiny White Dental Clinics</span><span class="page-no">14</span>
 </section>
 </main>
 <script>
+    const OFFICIAL_GUIDE_URL='https://mahmoudtaru.github.io/Shiny_White_AI_Assistant_Doctors_Guide/';
     const bar=document.getElementById('bar');
     const update=()=>{const h=document.documentElement;const max=h.scrollHeight-h.clientHeight;bar.style.width=(max?Math.min(100,h.scrollTop/max*100):0)+'%'};
     document.querySelectorAll('.page-no').forEach((el,index)=>el.textContent=String(index+1).padStart(2,'0'));
@@ -453,8 +456,7 @@
 
 
     document.querySelectorAll('.copy-guide-link').forEach(button=>button.addEventListener('click',()=>{
-      const url=window.location.href;
-      copyText(url,button);
+      copyText(OFFICIAL_GUIDE_URL,button);
     }));
 
     const outputType=document.getElementById('outputType');
@@ -466,14 +468,27 @@
     const builderOutput=document.getElementById('builderOutput');
 
     const buildPrompt=()=>{
-      const treatmentValue=treatment.value.trim()||'[DESCRIBE THE TREATMENT OR CORRECTION]';
+      const treatmentValue=treatment.value.trim();
+      if(!treatmentValue){
+        builderOutput.textContent='اكتب العلاج أو التعديل المطلوب أولًا، ثم اضغط «كوّن الـPrompt».';
+        treatment.focus();
+        return;
+      }
       const detailsValue=details.value.trim();
       const detailSentence=detailsValue?` Follow this confirmed sequence or detail: ${detailsValue}.`:'';
       builderOutput.textContent=`Using the uploaded patient images and confirmed clinical information, create ${outputType.value} ${viewType.value}. The requested treatment or correction is: ${treatmentValue}.${detailSentence} Preserve the exact same patient identity, face, lips, age, expression, angle, and non-dental features. Modify only the required dental structures. Keep the result natural, conservative, photorealistic, and medically plausible. Do not invent diagnosis, materials, implant positions, or unsupported treatment steps. ${referenceUse.value} ${brandUse.value}`;
     };
 
     document.getElementById('generatePrompt').addEventListener('click',buildPrompt);
-    document.getElementById('copyBuilder').addEventListener('click',()=>copyText(builderOutput.textContent.trim(),document.getElementById('copyBuilder')));
+    document.getElementById('copyBuilder').addEventListener('click',()=>{
+      const text=builderOutput.textContent.trim();
+      if(text==='Your generated English prompt will appear here.' || text.startsWith('اكتب العلاج')){
+        builderOutput.textContent='اكتب العلاج أو التعديل المطلوب، ثم كوّن الـPrompt قبل النسخ.';
+        treatment.focus();
+        return;
+      }
+      copyText(text,document.getElementById('copyBuilder'));
+    });
     document.getElementById('clearBuilder').addEventListener('click',()=>{
       treatment.value='';details.value='';outputType.selectedIndex=0;viewType.selectedIndex=0;referenceUse.selectedIndex=0;brandUse.selectedIndex=0;
       builderOutput.textContent='Your generated English prompt will appear here.';
